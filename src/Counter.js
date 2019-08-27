@@ -36,7 +36,7 @@ export const Counter = () => {
 
       <button
         className="t-btn-decrement"
-        data-testid="btn-increment"
+        data-testid="btn-decrement"
         onClick={decrement}
       >
         Decrement

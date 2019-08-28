@@ -17,7 +17,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const List = () => {
+const List = () => {
   const [state, dispatch] = useReducer(reducer, []);
   const [text, setText] = useState("");
 
@@ -38,15 +38,30 @@ export const List = () => {
 
   return (
     <>
-      <ul>
+      <ul
+        data-testid="list"
+      >
         {state.map(item => (
-          <li key={item} onClick={onRemove(item)}>
+          <li
+            key={item}
+            onClick={onRemove(item)}>
             {item}
           </li>
         ))}
       </ul>
-      <input value={text} onChange={updateText} />
-      <button onClick={onAdd}>Add item</button>
+      <input
+        value={text}
+        onChange={updateText}
+        data-testid="input"
+      />
+      <button
+        onClick={onAdd}
+        data-testid="button"
+      >
+        Add item
+      </button>
     </>
   );
 };
+
+export default List;
